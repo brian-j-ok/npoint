@@ -32,9 +32,10 @@ def fetch_users():
 
 fetch_users()
 
-@app.get("/")
-async def root():
-    return user_db
+
+@app.get("/", response_class=HTMLResponse)
+async def root(request: Request):
+    return templates.TemplateResponse("users.html", {"request": request, "user_db": user_db})
 
 
 @app.get("/users/{user_id}", response_class=HTMLResponse)

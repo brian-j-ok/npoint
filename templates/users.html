@@ -14,6 +14,7 @@
           <th>Last Name</th>
           <th>Email</th>
           <th>Password</th>
+          <th></th>
       </tr>
       {% for user in user_db %}
       <tr>
@@ -22,6 +23,9 @@
         <td>{{ user["last_name"] }}</td>
         <td>{{ user["email"] }}</td>
         <td>{{ user["password"] }}</td>
+        <td>
+            <a href="{{ url_for('get_user', user_id=user['id']) }}">View</a>
+        </td>
       </tr>
       {% endfor %}
     </table>

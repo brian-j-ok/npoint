@@ -5,6 +5,9 @@
     <title>User</title>
 </head>
 <body>
-    <h1>User</h1>
+    <div>
+        <h1>Welcome {{ user.first_name }}!</h1>
+        <div>You current balance is {{ user.balance }} {{ user.currency }}</div>
+    </div>
 </body>
 </html>
